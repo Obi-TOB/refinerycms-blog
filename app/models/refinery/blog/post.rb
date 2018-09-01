@@ -63,7 +63,7 @@ module Refinery
       # If custom_url or title changes tell friendly_id to regenerate slug when
       # saving record
       def should_generate_new_friendly_id?
-        saved_change_to_attribute?(:custom_url) || saved_change_to_attribute?(:title)
+        custom_url_changed? || title_changed?
       end
 
       # Delegate SEO Attributes to globalize translation
